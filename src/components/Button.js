@@ -2,8 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 
-const Button = ({ children, primary }) => {
-  return <StyledButton primary={primary}>{children}</StyledButton>
+const Button = ({ children, primary, to }) => {
+  return (
+    <StyledButton to={to} primary={primary}>
+      {children}
+    </StyledButton>
+  )
 }
 
 const StyledButton = styled(Link)`

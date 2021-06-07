@@ -12,18 +12,21 @@ const index = () => {
   return (
     <StyledHeroWrapper className="wrapper">
       <StyledMainCol className="col-left">
-        <MainHeading>Dylan Reed's</MainHeading>
-        <StyledCoHeading>Athletic Portfolio Physical Education</StyledCoHeading>
-        <div className="buttons">
-          <Button primary className="main-cta">
-            View Portfolio
-          </Button>
-          <Button className="routine-cta">My Routine</Button>
+        <div className="heading">
+          <StyledCoHeading>
+            Athletic Portfolio Physical Education
+          </StyledCoHeading>
+          <div className="buttons">
+            <Button to="/portfolio" primary className="main-cta">
+              View Portfolio
+            </Button>
+            <Button to="/routine" className="routine-cta">
+              My Routine
+            </Button>
+          </div>
         </div>
       </StyledMainCol>
-      <StyledColRight heroBg={heroBg} className="col-right">
-        <Link className="equipment-cta">My Equipment</Link>
-      </StyledColRight>
+      <StyledColRight heroBg={heroBg} className="col-right"></StyledColRight>
     </StyledHeroWrapper>
   )
 }
@@ -37,6 +40,18 @@ const StyledHeroWrapper = styled.div`
   position: relative;
   text-align: left;
 
+  .heading {
+    margin: 2em 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .buttons {
+      padding: 4em 0;
+    }
+  }
+
   @media only screen and (min-width: 768px) {
     flex-direction: row;
   }
@@ -47,32 +62,43 @@ const StyledMainCol = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
-
-const MainHeading = styled.h1`
-  font-size: clamp(2em, 10vw, 6em);
-  text-transform: uppercase;
-  color: ${(p) => p.theme.colors.lightGrey};
-  background-color: ${(p) => p.theme.colors.mainWhite};
-  z-index: 5;
-
-  @media screen and (min-width: 768px) {
-    position: absolute;
-    bottom: 600px;
-    left: 150px;
-    padding: 5px;
-  }
+  width: 100%;
 `
 
 const StyledCoHeading = styled.h3`
-  font-size: clamp(2em, 8vw, 4em);
-  max-width: 8em;
+  font-size: clamp(3em, 8vw, 4em);
+  max-width: 8ch;
   color: ${(p) => p.theme.colors.darkGrey};
-  padding: 0 2em 0.5em;
   line-height: 1.2;
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: "Dylan Reed's";
+    z-index: 10;
+    text-transform: uppercase;
+    color: ${(p) => p.theme.colors.lightGrey};
+    background-color: ${(p) => p.theme.colors.mainWhite};
+    position: absolute;
+    top: -1.25em;
+    left: 0;
+    white-space: nowrap;
+    font-size: clamp(1.225em, 6vw, 5em);
+  }
+
+  &::before {
+    content: "PP40";
+    position: absolute;
+    bottom: -0.5em;
+    right: 1.5em;
+    z-index: -1;
+    color: ${(p) => p.theme.colors.lightGrey};
+    font-size: clamp(1.225em, 6vw, 5em);
+  }
 
   @media only screen and (min-width: 768px) {
     margin-top: 3em;
+    font-size: 5em;
   }
 `
 
