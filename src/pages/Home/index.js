@@ -83,7 +83,7 @@ const StyledCoHeading = styled.h3`
     top: -1.25em;
     left: 0;
     white-space: nowrap;
-    font-size: clamp(1.225em, 6vw, 5em);
+    font-size: clamp(1em, 6vw, 5em);
   }
 
   &::before {
