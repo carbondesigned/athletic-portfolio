@@ -44,12 +44,10 @@ const StyledHeroWrapper = styled.div`
   text-align: left;
 
   .heading {
-    margin-top: 6em;
-    padding: 2em;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-evenly;
     height: 100%;
 
@@ -62,13 +60,19 @@ const StyledHeroWrapper = styled.div`
     }
 
     .buttons {
-      padding: 4em 0;
+      padding: 2em;
       width: 100%;
     }
   }
 
   @media only screen and (min-width: 768px) {
     flex-direction: row;
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-self: center;
+    }
   }
 `
 
@@ -77,7 +81,7 @@ const StyledMainCol = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-left: 5em;
+  /* padding-left: 5em; */
   /* justify-content: center; */
 
   width: 100%;
@@ -92,6 +96,7 @@ const StyledColRight = styled.section`
   opacity: 0.5;
   flex: 1;
   z-index: 0;
+  width: 100%;
 `
 
 export default index

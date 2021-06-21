@@ -31,6 +31,10 @@ const StyledNav = styled.nav`
   z-index: 3;
   padding: 1em;
 
+  @media screen and (max-width: 768px) {
+    background-color: ${(p) => p.theme.colors.lightGrey};
+  }
+
   a {
     text-decoration: none;
     color: ${(p) => p.theme.colors.darkGrey};
@@ -50,6 +54,7 @@ const StyledNav = styled.nav`
     li {
       list-style: none;
       font-weight: 700;
+      font-size: clamp(0.5em, 3vw, 1.125em);
     }
   }
 `

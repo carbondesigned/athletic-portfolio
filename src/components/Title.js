@@ -11,7 +11,7 @@ const Title = ({ children }) => {
 }
 
 const StyledTitle = styled.div`
-  font-size: clamp(3em, 6vw, 2.725em);
+  font-size: clamp(1.5em, 6vw, 4.725em);
   font-weight: 500;
   position: relative;
   z-index: 1;

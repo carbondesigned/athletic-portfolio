@@ -16,6 +16,7 @@ const StyledButton = styled(Link)`
   color: ${(p) => (p.primary ? "white" : "#D31027")};
   border-radius: ${(p) => (p.primary ? "10em" : "0")};
   text-decoration: none;
+  white-space: nowrap;
 `
 
 export default Button

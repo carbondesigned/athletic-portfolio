@@ -22,12 +22,10 @@ const Reflection = () => {
           fell into around the middle of the quadmester, though I have
           successfully overcame it by the end, so I finished with good terms
           with my routine and motivation. I have set a goal of reaching a
-          desirable weight, and though, I have seen improvements losing a little
-          over 5 pounds, I have not hit my desired 180Ibs in total. Which I will
-          continue to grind for, for Halloween a due date for myself. By pushing
-          myself as I have been for the past month or so, I have no doubt that I
-          will hit it. Thank you Mr. Lanspeary for a more entertaining and
-          interesting class.
+          desirable weight, and I will continue to grind for, by keeping the
+          original date, September. By pushing myself as I have been for the
+          past month or so, I have no doubt that I will hit it. Thank you Mr.
+          Lanspeary for a more entertaining and interesting class.
         </p>
       </div>
     </StyledSection>
