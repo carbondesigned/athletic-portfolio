@@ -2,8 +2,10 @@ import React from "react"
 import styled from "styled-components"
 import Month from "./Month"
 
-//months
-import { month1 } from "./portfolioData"
+//Covers
+import bicepCurl from "./img/april/bics.png"
+import shoulderRaises from "./img/may/shoulder-raises.png"
+import singleDumbellCurl from "./img/june/singleDumbellCurl.png"
 
 const index = () => {
   return (
@@ -12,10 +14,37 @@ const index = () => {
         <h1>My Portfolio</h1>
       </div>
 
+      <div className="intro">
+        <h2>Intro</h2>
+        <p>
+          My three goals were very based on the near future, and to be honest
+          was cool to see where I've come since then. I mentioned hitting a
+          desired 20 Ibs weight loss goal by September. I also mentioned about
+          my web development progress in which I wanted to learn a programming
+          language, JavaScript to then begin working and have clients. Finally,
+          I mentioned that for an overall improvement in productivity based
+          habits, such as early mornings to have plenty of time before the day
+          actually starts, workout routine, learning programming, etc.
+        </p>
+        <p>
+          Even though I have not thought about this goals in a while
+          specifically, I have subconsciously I feel like have been on track
+          with them. I have surpassed my goal with learning the language, and
+          also smashed my productive mornings, and waking up at 6:00 each day,
+          as opposed to 7:00 - 8:00 I mentioned originally. This morning routine
+          has made me more in-tune with my sleep which have recently became
+          aware is very important to know that about yourself.
+        </p>
+      </div>
+
       <div className="months">
-        <Month {...month1} />
-        <Month {...month1} />
-        <Month {...month1} />
+        <Month src={bicepCurl} title={"April"} path={"/portfolio/april"} />
+        <Month src={shoulderRaises} title={"May"} path={"/portfolio/may"} />
+        <Month
+          src={singleDumbellCurl}
+          title={"June"}
+          path={"/portfolio/june"}
+        />
       </div>
     </StyledPortfolio>
   )
@@ -47,6 +76,21 @@ const StyledPortfolio = styled.section`
         color: ${(p) => p.theme.colors.lightGrey};
         font-size: clamp(1.225em, 6vw, 5em);
       }
+    }
+  }
+
+  .intro {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 5em;
+
+    p {
+      padding: 2em 0;
+      max-width: 100ch;
+      line-height: 2;
     }
   }
 

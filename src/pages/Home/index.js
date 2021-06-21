@@ -7,15 +7,17 @@ import heroBg from "../../Assets/images/hero-bg.png"
 
 // Components
 import Button from "../../components/Button"
+import StyledTitle from "../../components/Title"
 
 const index = () => {
   return (
     <StyledHeroWrapper className="wrapper">
       <StyledMainCol className="col-left">
         <div className="heading">
-          <StyledCoHeading>
-            Athletic Portfolio Physical Education
-          </StyledCoHeading>
+          <div>
+            <h2>Dylan Reed's</h2>
+            <StyledTitle>Athletic Portfolio Physical Education</StyledTitle>
+          </div>
           <div className="buttons">
             <Button to="/portfolio" primary className="main-cta">
               View Portfolio
@@ -35,20 +37,33 @@ const StyledHeroWrapper = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
+
   background: ${(p) => p.theme.colors.mainWhite};
   flex-direction: column-reverse;
   position: relative;
   text-align: left;
 
   .heading {
-    margin: 2em 0;
+    margin-top: 6em;
+    padding: 2em;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 100%;
+
+    h2 {
+      font-size: clamp(3em, 8vw, 6.125em);
+      text-transform: uppercase;
+      font-weight: 700;
+      color: ${(p) => p.theme.colors.lightGrey};
+      width: 100%;
+    }
 
     .buttons {
       padding: 4em 0;
+      width: 100%;
     }
   }
 
@@ -62,44 +77,11 @@ const StyledMainCol = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-left: 5em;
+  /* justify-content: center; */
+
   width: 100%;
-`
-
-const StyledCoHeading = styled.h3`
-  font-size: clamp(3em, 8vw, 4em);
-  max-width: 8ch;
-  color: ${(p) => p.theme.colors.darkGrey};
-  line-height: 1.2;
-  position: relative;
-  z-index: 1;
-
-  &::after {
-    content: "Dylan Reed's";
-    z-index: 10;
-    text-transform: uppercase;
-    color: ${(p) => p.theme.colors.lightGrey};
-    background-color: ${(p) => p.theme.colors.mainWhite};
-    position: absolute;
-    top: -1.25em;
-    left: 0;
-    white-space: nowrap;
-    font-size: clamp(1em, 6vw, 5em);
-  }
-
-  &::before {
-    content: "PP40";
-    position: absolute;
-    bottom: -0.5em;
-    right: 1.5em;
-    z-index: -1;
-    color: ${(p) => p.theme.colors.lightGrey};
-    font-size: clamp(1.225em, 6vw, 5em);
-  }
-
-  @media only screen and (min-width: 768px) {
-    margin-top: 3em;
-    font-size: 5em;
-  }
+  height: 100%;
 `
 
 const StyledColRight = styled.section`

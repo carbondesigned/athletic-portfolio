@@ -3,19 +3,21 @@ import { Link } from "react-router-dom"
 import styled from "styled-components"
 import Button from "../../components/Button"
 
-const Month = ({ month, cover }) => {
+const Month = ({ title, src, path }) => {
   return (
-    <StyledMonth cover={cover}>
+    <StyledMonth>
       <Link>
         <img
-          src={cover}
-          alt="a showcase of athletic work `${month}`"
+          src={src}
+          alt="a showcase of athletic work ${month}"
           className="cover"
         />
       </Link>
       <div className="info">
-        <h2> {month} </h2>
-        <Button primary>View Month</Button>
+        <h2> {title} </h2>
+        <Button to={path} primary>
+          View Month
+        </Button>
       </div>
     </StyledMonth>
   )
@@ -27,6 +29,8 @@ const StyledMonth = styled.div`
   img {
     max-width: 100%;
     border-radius: 1em;
+    filter: grayscale(0.6);
+    border: 5px solid ${(p) => p.theme.colors.darkGrey};
   }
 
   .info {
